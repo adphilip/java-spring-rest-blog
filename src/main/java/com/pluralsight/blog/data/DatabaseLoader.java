@@ -2,6 +2,7 @@ package com.pluralsight.blog.data;
 
 import com.pluralsight.blog.model.Author;
 import com.pluralsight.blog.model.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,7 @@ public class DatabaseLoader implements ApplicationRunner {
 
     private final PostRepository  postRepository;
 
+    @Autowired
     public DatabaseLoader(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
@@ -34,6 +36,9 @@ public class DatabaseLoader implements ApplicationRunner {
             String title = String.format(template, gadget);
             Post post = new Post(title, "Lorem ipsum dolor sit amet, consectetur adipiscing elit… ");
             randomPosts.add(post);
+
+
         });
+        postRepository.saveAll(randomPosts);
     }
 }
