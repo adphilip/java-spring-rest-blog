@@ -9,21 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
-public class PostRepository {
-    public List<Post> findAll() {
-        return new ArrayList<>();
-    }
-
-    public List<Post> saveAll(List<Post> posts) {
-        return new ArrayList<>();
-    }
-
-    public Post save(Post post) {
-        return null;
-    }
-
-    public Optional<Post> findById(Long id) {
-        return null;
-    }
+public interface PostRepository extends JpaRepository<Post, Long> {
+//    public List<Post> findAll() {
+//        return new ArrayList<>();
+//    }
+//
+//    public List<Post> saveAll(List<Post> posts) {
+//        return new ArrayList<>();
+//    }
+//
+//    public Post save(Post post) {
+//        return null;
+//    }
+//
+//    public Optional<Post> findById(Long id) {
+//        return null;
+//    }
 }
