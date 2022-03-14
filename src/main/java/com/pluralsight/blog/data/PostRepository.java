@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
-//    public List<Post> findAll() {
+    //    public List<Post> findAll() {
 //        return new ArrayList<>();
 //    }
 //
@@ -26,6 +26,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 //    public Optional<Post> findById(Long id) {
 //        return null;
 //    }
-@RestResource(rel="contains-title", path="containsTitle")
+    @RestResource(rel = "contains-title", path = "containsTitle")
 //http://localhost:8080/posts/search/containsTitle?title=Smart
     List<Post> findByTitleContaining(String title);
+}
